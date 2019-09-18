@@ -1,5 +1,5 @@
 
-#include "matrixKeyboard.h"
+#include <matrixKeyboard.h>
 
 // this config is for the big black keyboard 4x4
 int rows[] = {3, 4, 5, 6};
