@@ -53,7 +53,7 @@ MATRIX_KEYBOARD::MATRIX_KEYBOARD(int* column_pins, byte nb_columns, int* row_pin
     rowPins = row_pins;
     nbRows = nb_rows;
     codes = _codes;
-    pushHandler = 0;
+    pushHandler = NULL;
 }
 
 void MATRIX_KEYBOARD::begin()
