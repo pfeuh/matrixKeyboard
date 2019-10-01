@@ -5,9 +5,7 @@
 //~ int columns[] = {7, 8, 9, 2};
 int  columns[] = {26, 24, 22, 36};
 int  rows[]    = {34, 32, 30, 28};
-// you definitely want a match between your charset and column number / row number
-// <<< this table MUST be in RAM! >>>
-char codes[] = {'1', '2', '3', 'A', '4', '5', '6', 'B', '7', '8', '9', 'C', '*', '0', '#', 'D'};
+const char codes[] PROGMEM = {'1', '2', '3', 'u', '4', '5', '6', 'r', '7', '8', '9', 'l', '*', '0', '#', 'd'};
 MATRIX_KEYBOARD keyboard = MATRIX_KEYBOARD(columns, sizeof(columns) / sizeof(int), rows, sizeof(rows) / sizeof(int), codes);
 
 const char PROGMEM title[] = "test of matrixKeyboard v. " MATRIX_KEYBOARD_VERSION;

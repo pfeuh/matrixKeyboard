@@ -17,7 +17,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 #ifndef matrixKeyboard_h
 #define matrixKeyboard_h
 
@@ -30,7 +29,7 @@ typedef void (*MATRIX_KEYBOARD_type_callback)(byte bt_num);
 class MATRIX_KEYBOARD
 {
     public:
-        MATRIX_KEYBOARD(int* column_pins, byte nb_columns, int* row_pins, byte nb_rows, char* codes);
+        MATRIX_KEYBOARD(int* column_pins, byte nb_columns, int* row_pins, byte nb_rows, const char* codes);
         void begin();
         void setPushHandler(MATRIX_KEYBOARD_type_callback callback);
         byte available();

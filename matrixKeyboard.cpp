@@ -17,7 +17,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 #include "matrixKeyboard.h"
 
 /*******************/
@@ -39,20 +38,21 @@ void MATRIX_KEYBOARD::setState(byte column, byte row, byte state)
 
 byte MATRIX_KEYBOARD::getCode(byte column, byte row)
 {
-    return codes[column + row * nbColumns] & 0x7f;
+    //~ return codes[column + row * nbColumns] & 0x7f;
+    return pgm_read_byte(codes + column + row * nbColumns) & 0x7f;
 }
 
 /******************/
 /* Public methods */
 /******************/
 
-MATRIX_KEYBOARD::MATRIX_KEYBOARD(int* column_pins, byte nb_columns, int* row_pins, byte nb_rows, char* _codes)
+MATRIX_KEYBOARD::MATRIX_KEYBOARD(int* column_pins, byte nb_columns, int* row_pins, byte nb_rows, const char* _codes)
 {
     columnPins = column_pins;
     nbColumns = nb_columns;
     rowPins = row_pins;
     nbRows = nb_rows;
-    codes = _codes;
+    codes = (char*)_codes;
     pushHandler = NULL;
 }
 
